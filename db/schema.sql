@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS blitz_db;
+CREATE DATABASE blitz_db;
