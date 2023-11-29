@@ -1,8 +1,8 @@
-const router = require("express").Router()
-const db = require("../models")
+const router = require("express").Router();
+const homeRoutes = require("./home-routes");
+const apiRoutes= require("./api");
 
-router.get("/", async function (req, res) {
-    res.send("app running");
-})
+router.use(homeRoutes);
+router.use("/api", apiRoutes);
 
 module.exports = router;
