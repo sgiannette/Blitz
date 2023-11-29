@@ -1,18 +1,26 @@
-<div class="flex-cloumn justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-        <h1>
+<div class="container mt-5">
+    <h2 class="mb-4">Create a new post!</h2>
+    <form class="newPostForm">
+        <div class="mb-3">
+            <label for="game-title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="game-title" />
+        </div>
+        <div class="mb-3">
+            <label for="game-genre" class="form-label">Genre</label>
+            <input type="text" class="form-control" id="game-genre" />
+        </div>
+        <div class="mb-3">
+            <label for="game-rating" class="form-label">Rating</label>
+            <input type="number" class="form-control" id="game-rating" />
+        </div>
+        <div class="mb-3">
+            <label for="game-video" class="form-label">Video</label>
+            <input type="text" class="form-control" id="game-video" />
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Create Post</button>
+        </div>
+    </form>
+</div>
 
-      </h1>  
-      </header>
-      <div class="">
-        <div class = "card-header col-md-10">
-            <h2>
-
-                </h2>
-                </div>
-                <div>
-                    <ol>
-                        <li>
-                            
-                            </li>
-
+<script src="/js/newPost.js"></script>
