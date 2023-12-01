@@ -5,7 +5,6 @@ class Post extends Model { }
 
 Post.init(
   {
-    body: DataTypes.STRING,
     game: DataTypes.STRING,
     genre: DataTypes.STRING, 
     rating: DataTypes.INTEGER, 

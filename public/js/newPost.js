@@ -1,13 +1,16 @@
 const postFormHandler = async (event) => {
     event.preventDefault();
+    console.log('Hello?');
 
-    const postTitle = document.querySelector('#post-title');
-    const postDescription = document.querySelector('#post-description');
+    const game = document.querySelector('#game-title').value;
+    const genre = document.querySelector('#game-genre').value;
+    const rating = document.querySelector('#game-rating').value;
+    const video_embed = document.querySelector('#game-video').value;
 
-    if (postTitle && postDescription) {
+    if (game && genre && rating && video_embed) {
         const response = await fetch('/api/posts', {
             method: 'POST',
-            body: JSON.stringify({ postTitle, postDescription }),
+            body: JSON.stringify({ game, genre, video_embed, rating }),
             headers: { 'Content-Type': 'application/json' },
         });
         if (response.ok) {
