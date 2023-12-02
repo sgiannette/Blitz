@@ -2,9 +2,11 @@ nav{
 
     display:flex;
     flex-direction:column;
-    border: 1px solid blue;
     margin: 10px;
     padding: 5px;
+    background-image: linear-gradient(to bottom right, white, rgb(255,125,125));
+    border:1px solid black;
+
 }
 #Main {
     display:flex;
@@ -13,9 +15,10 @@ nav{
 }
 #Top{
     text-align: center;
-    border: 1px solid blue;
     margin: 10px;
     padding: 10px;
+    background-image: linear-gradient(white,rgb(255,125,125));
+    border:1px solid black;
 
 }
 
@@ -28,3 +31,10 @@ form{
 
 }
 
+Button{
+    border-radius: 10px;
+    border-color: red;
+
+
+
+}
