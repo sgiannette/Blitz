@@ -19,5 +19,12 @@ nav{
 
 }
 
+form{
+    display: grid;
+    grid-template-columns: 65px 250px;
+    grid-gap: 10px
 
+
+
+}
 
