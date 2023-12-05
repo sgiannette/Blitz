@@ -8,7 +8,7 @@ Post.init(
     game: DataTypes.STRING,
     genre: DataTypes.STRING, 
     rating: DataTypes.INTEGER, 
-    video_embed: DataTypes.STRING
+    video_embed: DataTypes.TEXT
   },
   {
     sequelize,
