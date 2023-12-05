@@ -10,11 +10,26 @@
 </div>
 
 <script id="games-template" type="text/x-handlebars-template">
-<h1>horror games</h1>
+<h1> Blitz games</h1>
 <ul>
     {{#each games}}
     <li>{{this}}</li>
     {{/each}}
+    </ul>
+</script>
+
+
+<div id="'games-container"></div>
+
+<script>
+let gamesData = {
+    games: ["Call of Duty", "Assassins Creed", "Little Nightmares", "Elden", "Dark Souls", "Fallout"] 
+    }; 
+
+    let gamesTemplate = Handlebars.compile(document.getElementById("games-template").innnerHTML);
+    document.getElementById("games-container").innerHTML
+
+</script>
 
 
 
