@@ -51,4 +51,27 @@ const loginFormHandler = async (event) => {
   document
     .querySelector('.signup-form')
     .addEventListener('submit', signupFormHandler);
+
+    // function for cookies
+
+    function setCookie (name, days) {
+      const expires = new Date(); 
+      expires.setTime(expires.getTime() + days * 24 * 60 *1000); 
+      document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`; 
+    }
+
+    function hasAcceptedCookies() {
+      return document.cookie.includes('cookiesAccepted=true'); 
+    }; 
+
+    function closeBanner() {
+      setCookie('cookiesAccepted', 'true', 50)
+      document.getElementById('cookie-banner').style.display = 'none'; 
+    }; 
+
+    if (!hasAcceptedCookies()) {
+      document.getElementById('accepted-banner').style.display = 'block'; 
+    }
+
+      document.getElementById('accept-cookies').addEventListener('click', closebanner); 
   
