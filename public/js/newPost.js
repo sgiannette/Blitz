@@ -10,11 +10,11 @@ const postFormHandler = async (event) => {
     if (game && genre && rating && video_embed) {
         const response = await fetch('/api/posts', {
             method: 'POST',
-            body: JSON.stringify({ game, genre, video_embed, rating }),
+            body: JSON.stringify({ game, genre, rating, video_embed}),
             headers: { 'Content-Type': 'application/json' },
         });
         if (response.ok) {
-            document.location.replace('/dashboard');
+            document.location.replace('/');
         }
     }
 }

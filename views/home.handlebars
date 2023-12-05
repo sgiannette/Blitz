@@ -1,26 +1,21 @@
-<div class="container mt-5">
-    <h2 class="mb-4">Create a new post!</h2>
-    <form class="newPostForm">
-        <div class="mb-3">
-            <label for="game-title" class="form-label">Title</label>
-            <input type="text" class="form-control" id="game-title" />
-        </div>
-        <div class="mb-3">
-            <label for="game-genre" class="form-label">Genre</label>
-            <input type="text" class="form-control" id="game-genre" />
-        </div>
-        <div class="mb-3">
-            <label for="game-rating" class="form-label">Rating</label>
-            <input type="number" class="form-control" id="game-rating" />
-        </div>
-        <div class="mb-3">
-            <label for="game-video" class="form-label">Video</label>
-            <input type="text" class="form-control" id="game-video" />
-        </div>
-        <div class="mb-3">
-            <button type="submit" class="btn btn-primary">Create Post</button>
-        </div>
-    </form>
+<div class="list-group">
+  {{#each posts}}
+  <a href="/post/{{id}}" class="list-group-item list-group-item-action flex-column align-items-start active">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">title: {{game}}</h5>
+      <p>Rating: {{rating}}</p>
+      <small>genre: {{genre}}</small>
+
+      {{{video_embed}}}
+    </div>
+  </a>
+  {{/each}}
 </div>
 
-<script src="/js/newPost.js"></script>
+{{!-- <script id="games-template" type="text/x-handlebars-template"> --}}
+<h1>horror games</h1>
+<ul>
+    {{#each games}}
+    <li>{{this}}</li>
+    {{/each}}
+    </ul>
