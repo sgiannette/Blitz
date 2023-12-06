@@ -1,14 +1,15 @@
 <main class="container mt-5">
     <article>
         <h1>{{title}}</h1>
-        <p>Created by: {{user.name}}</p>
+        <p>Created by: {{username}}</p>
         <p>{{description}}</p>
     </article>
     {{#if logged_in}}
     <form id="comment-form" class="mb-3">
         <div class="mb-3">
             <label class="form-label">Comment</label>
-            <textarea id="comment-description"></textarea>
+            <textarea id="body"></textarea>
+            <textarea id="reaction"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -17,7 +18,7 @@
     {{#each comments as |comment|}}
     <div class="comment mb-3">
         <p>{{description}}</p>
-        <p>By {{user.name}}</p>
+        <p>By {{username}}</p>
     </div>
     {{/each}}
 </main>

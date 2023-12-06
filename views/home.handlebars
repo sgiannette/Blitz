@@ -1,21 +1,66 @@
 <div class="list-group">
+  {{!-- <p>&#x26bd;</p> --}}
   {{#each posts}}
   <a href="/post/{{id}}" class="list-group-item list-group-item-action flex-column align-items-start active">
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">title: {{game}}</h5>
-      <p>Rating: {{rating}}</p>
-      <small>genre: {{genre}}</small>
+      <h2 class="mb-1">Title: {{game}}</h2>
+      <h3 class="mb-1">Genre: {{genre}}</h3>
+      <h4 class="mb-1">Rating: {{rating}}</h4>
 
       {{{video_embed}}}
+
     </div>
   </a>
+  <button data-id={{id}} class="add-reaction">Add Reaction</button>
   {{/each}}
 </div>
 
-{{!-- <script id="games-template" type="text/x-handlebars-template"> --}}
-<h1>horror games</h1>
 <ul>
-    {{#each games}}
-    <li>{{this}}</li>
-    {{/each}}
-    </ul>
+  {{#each games}}
+  <li>{{this}}</li>
+  {{/each}}
+</ul>
+
+
+<script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+
+
+<script>
+  {
+    {
+      {{let post_id;
+      document.body.addEventListener('click', e => {
+        if (e.target.hasAttribute('data-id')) {
+          post_id = e.target.dataset.id
+          console.log(post_id)
+        }
+      })}}
+    }
+  }
+  async function save(event) {
+    const emoji = event.unified
+ console.log(emoji)
+     const response = await fetch('/api/comments', {
+      method: 'POST',
+      body: JSON.stringify({ reaction: emoji, post_id }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    if (response.ok) {
+      document.location.reload()
+    }
+    else {
+      alert(response.statusText)
+    }
+  }
+  const reactionBtns = document.querySelectorAll('.add-reaction')
+  reactionBtns.addEventListener("click", function () {
+    const pickerOptions = { onEmojiSelect: save }
+    const picker = new EmojiMart.Picker(pickerOptions)
+
+    document.body.appendChild(picker)
+  })
+
+
+</script>

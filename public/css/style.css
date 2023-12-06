@@ -1,3 +1,15 @@
+body {
+    background-color: rgb(65, 58, 58);
+  }
+  h2{
+    color: antiquewhite;
+  }
+h3{
+    color: antiquewhite;
+}
+h4{
+    color: antiquewhite
+}
 nav{
 
     display:flex;
@@ -5,8 +17,8 @@ nav{
     margin: 10px;
     padding: 5px;
     background-image: linear-gradient(to bottom right, white, rgb(255,125,125));
-    border:1px solid black;
-
+    border:10px solid black;
+    border-radius: 20px;
 }
 #Main {
     display:flex;
@@ -18,15 +30,16 @@ nav{
     margin: 10px;
     padding: 10px;
     background-image: linear-gradient(white,rgb(255,125,125));
-    border:1px solid black;
+    border:10px solid black;
+    border-radius: 20px;
 
 }
 
 form{
     display: grid;
     grid-template-columns: 65px 250px;
-    grid-gap: 10px
-
+    grid-gap: 10px;
+    margin:auto; 
 
 
 }
@@ -38,3 +51,17 @@ Button{
 
 
 }
+
+#signinform{
+
+}
+
+#em-emoji-picker {
+    position: absolute;
+    top: 150px;
+    left: 224px;
+    
+}
+
+
+

@@ -1,35 +1,38 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css"/>
-    <title>Blitz</title>
-  </head>
-  <body>
-    <header id="Top">
-      Welcome to Blitz, The Future of Game Share!
 
-     
-    </header>
-    <div id="Main"> 
-      <nav>
-          <a href="/">Home</a>
-          
-          {{#if logged_in}}
-          <a id="logout" href="#">Log Out</a>
-          <a href="/profile">Profile</a>
-          {{else}}
-          <a href="/login">Log In</a>
-          <a href="/signup">Sign Up</a>
-          {{/if}}
-        </nav>
-      <section>
-        {{{body}}}
-      </section>
-    </div>
-    {{#if logged_in}}
-      <script src="/js/logout.js"></script>
-    {{/if}}
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <title>Blitz</title>
+</head>
 
-</html>
+<body>
+  <header id="Top">
+    Welcome to Blitz, The Future of Game Share!
+
+
+  </header>
+  <div id="Main">
+    <nav>
+      <a href="/">Home</a>
+
+      {{#if logged_in}}
+      <a id="logout" href="#">Log Out</a>
+      <a href="/profile">Profile</a>
+      {{else}}
+      <a href="/login">Log In</a>
+      <a href="/signup">Sign Up</a>
+      {{/if}}
+    </nav>
+    <section>
+      {{{body}}}
+    </section>
+  </div>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+  <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+  
+</body>

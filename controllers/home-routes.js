@@ -4,7 +4,6 @@ const withAuth = require("../utils/auth");
 
 router.get('/', async (req, res) => {
 	try {
-        console.log("hello?");
 		const dbRes = await Post.findAll();
 		const posts = dbRes.map(post => post.get({ plain: true }));
 
