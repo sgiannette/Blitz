@@ -1,21 +1,57 @@
 <div class="list-group">
+  {{!-- <p>&#x26bd;</p> --}}
   {{#each posts}}
+ 
   <a href="/post/{{id}}" class="list-group-item list-group-item-action flex-column align-items-start active">
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">title: {{game}}</h5>
-      <p>Rating: {{rating}}</p>
-      <small>genre: {{genre}}</small>
-
+      <h2 class="mb-1">Title: {{game}}</h2>
+      <h3 class="mb-1">Genre: {{genre}}</h3>
+      <h4 class="mb-1">Rating: {{rating}}</h4>
+    
       {{{video_embed}}}
+
     </div>
   </a>
+
+  {{#each Comments}}
+  <p>{{{reaction}}}</p>
+  {{/each}}
+
+  <button data-id={{id}} class="add-reaction">Add Reaction</button>
   {{/each}}
 </div>
 
-{{!-- <script id="games-template" type="text/x-handlebars-template"> --}}
-<h1>horror games</h1>
 <ul>
-    {{#each games}}
-    <li>{{this}}</li>
-    {{/each}}
-    </ul>
+  {{#each games}}
+  <li>{{this}}</li>
+  {{/each}}
+</ul>
+
+
+
+
+<script>
+
+ let post_id;
+
+  function save(e) {
+    getPostId(e.unified, post_id)
+  }
+ 
+
+  document.querySelectorAll('.add-reaction').forEach(button => {
+    button.addEventListener('click', function (event) {
+      post_id = event.target.dataset.id
+      const pickerOptions = { onEmojiSelect: save}
+      const picker = new EmojiMart.Picker(pickerOptions)
+      
+      event.target.parentElement.appendChild(picker)
+    });
+  });
+
+
+
+
+</script>
+
+<script src="/js/reaction.js"></script>
