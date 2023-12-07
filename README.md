@@ -16,7 +16,7 @@ Must use SOURCE schema.sql to add the database, then run the program using npm r
 
 ## Application Link
 
-
+https://games-blitz-b15f3705b087.herokuapp.com/
 
 ## Credits
 
