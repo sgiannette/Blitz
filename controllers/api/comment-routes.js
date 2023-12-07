@@ -14,13 +14,14 @@ router.get('/comments', async (req, res) => {
 
 // Create a new comment
 router.post('/', async (req, res) => {
-  try {
-    const newComment = await Comment.create({...req.body, UserId: req.session.user_id});
-    res.status(201).json(newComment);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
+    try {
+
+      const newComment = await Comment.create({...req.body, UserId: req.session.user_id});
+      res.status(201).json(newComment);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
 });
 
 module.exports = router;

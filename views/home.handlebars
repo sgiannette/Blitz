@@ -1,11 +1,13 @@
 <div class="list-group">
+  {{!-- <p>&#x26bd;</p> --}}
   {{#each posts}}
+ 
   <a href="/post/{{id}}" class="list-group-item list-group-item-action flex-column align-items-start active">
     <div class="d-flex w-100 justify-content-between">
       <h2 class="mb-1">Title: {{game}}</h2>
       <h3 class="mb-1">Genre: {{genre}}</h3>
       <h4 class="mb-1">Rating: {{rating}}</h4>
-
+    
       {{{video_embed}}}
 
     </div>
@@ -15,7 +17,7 @@
   <p>{{{reaction}}}</p>
   {{/each}}
 
-  <button data-id={{id}}="add-reaction">Add Reaction</button>
+  <button data-id={{id}} class="add-reaction">Add Reaction</button>
   {{/each}}
 </div>
 
@@ -24,6 +26,9 @@
   <li>{{this}}</li>
   {{/each}}
 </ul>
+
+
+
 
 <script>
 
